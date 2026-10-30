@@ -1,0 +1,16 @@
+from fastapi import FastAPI
+
+app = FastAPI()
+
+@app.get("/")
+def home():
+    return {
+        'name' : 'Task API',
+        'version' : '1.0.0',
+        'endpoints' : ['/tasks']
+    }
+
+@app.get("/health")
+def health_check():
+    return {"status" : "ok"}
+
